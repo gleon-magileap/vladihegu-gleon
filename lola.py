@@ -1,3 +1,3 @@
 a=0
 print(a)
-print('hello from python')
+sprint('hello from python')
