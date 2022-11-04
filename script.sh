@@ -26,4 +26,6 @@ cp lola.php /var/www/html/lola.php
 
 apt install mysql-server -y
 
-sh mysql-db-create.sh wp user password
+mysql -e "CREATE USER 'wp_user'@'localhost' IDENTIFIED BY 'password';"
+mysql -e "GRANT ALL PRIVILEGES ON * . * TO 'wp_user'@'localhost';"
+mysql -e "FLUSH PRIVILEGES;"
