@@ -18,3 +18,5 @@ ufw status
 #curl localhost:80
 
 cp page1.html /var/www/html/vladihegu.html
+
+apt install php -y
