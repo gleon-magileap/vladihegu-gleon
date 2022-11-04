@@ -23,3 +23,7 @@ service nginx stop
 apt install php -y
 
 cp lola.php /var/www/html/lola.php
+
+apt install mysql-server -y
+
+sh mysql-db-create.sh wp user password
