@@ -19,4 +19,7 @@ ufw status
 
 cp page1.html /var/www/html/vladihegu.html
 
+service nginx stop
 apt install php -y
+
+cp lola.php /var/www/html/lola.php
