@@ -30,3 +30,13 @@ mysql -e "CREATE DATABASE wordpress"
 mysql -e "CREATE USER 'wp_user'@'localhost' IDENTIFIED BY 'password';"
 mysql -e "GRANT ALL PRIVILEGES ON * . * TO 'wp_user'@'localhost';"
 mysql -e "FLUSH PRIVILEGES;"
+
+service mysql status
+
+mysql -e "show DATABASES;"
+mysql -e "SELECT user FROM mysql.user;"
+
+wget -O /var/www/latest.tar.gz https://wordpress.org/latest.tar.gz
+tar -xzvf /var/www/latest.tar.gz -C /var/www/
+cp wp-config.php /var/www/wordpress/wp-config.php
+
