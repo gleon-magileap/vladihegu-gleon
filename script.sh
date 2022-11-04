@@ -15,4 +15,6 @@ service ufw status |grep 'enabled;'
 ufw allow 80
 ufw status
 
-curl localhost:80
+#curl localhost:80
+
+cp page1.html /usr/share/nginx/html/vladihegu.html
