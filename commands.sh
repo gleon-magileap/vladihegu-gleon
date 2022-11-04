@@ -12,6 +12,5 @@ cd vladihegu-gleon
 
 
 ################
-git pull
-sh script.sh
+git pull && sh script.sh
 ################
