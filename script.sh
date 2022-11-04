@@ -14,3 +14,5 @@ service ufw status |grep 'enabled;'
 
 ufw allow 80
 ufw status
+
+curl localhost:80
