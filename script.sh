@@ -4,7 +4,7 @@ apt update -y
 apt install git ufw -y
 
 ufw allow 22
-ufw enable
+ufw --force enable
 ufw status
 
 apt install nginx -y
