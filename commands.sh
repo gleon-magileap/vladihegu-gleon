@@ -1,5 +1,5 @@
 #to connect
-ssh -L 8080:localhost:80 -i <privkey> <user>@<ip>
+ssh -L 8080:localhost:80 -L 8081:localhost:81 -L 13306:localhost:3306 -i <privkey> <user>@<ip>
 
 #to become root
 sudo su
