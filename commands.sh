@@ -12,5 +12,13 @@ cd vladihegu-gleon
 
 
 ################
-git pull && sh script.sh
+git pull 
+sh script.sh
 ################
+
+ps -ef |grep nginx
+service nginx status
+service nginx stop
+
+#manual execution with:
+/usr/sbin/nginx -g 'daemon on; master_process on;' # copied from the systemd file
