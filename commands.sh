@@ -1,4 +1,4 @@
 #to become root
-sudo sudo
+sudo su
 
 
