@@ -8,9 +8,9 @@ docker run -it -d --name ubuntu ubuntu:16.04
 
 docker exec -it ubuntu bash
 # we do lot of s....
-#install nginx
+#install nginx, apache my sql , download wordpress...
 
-#to save the changes on a container, we create an image
+#to save the changes on a container, we create an image please get the id from the container
 docker commit 8516ed610129 my-ubuntu
 
 docker run -it -d --name gus-ubuntu -p 8083:80 my-ubuntu
