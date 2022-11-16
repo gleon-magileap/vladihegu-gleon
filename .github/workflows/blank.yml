@@ -37,8 +37,8 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: |
-          apt update
-          apt install docker.io -y
+          sudo apt update
+          sudo apt install docker.io -y
           python old/lola.py
           docker build . --tag 45.77.114.9:5000/python:latest
           docker push 45.77.114.9:5000/python:latest
