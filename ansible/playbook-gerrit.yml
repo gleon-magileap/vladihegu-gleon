@@ -1,10 +1,10 @@
 ---
-- hosts: gerrit
+- hosts: groupB
   become: true
   tasks:
 
   - name: Installing required components
-    apt: 
+    package: 
       name: '{{item}}'
       state: present
     with_items:
@@ -17,12 +17,12 @@
       - curl
       - jq
 
-  - name: Installing python components
-    pip:
-      name: '{{item}}'
-      state: forcereinstall
-    with_items:
-      - pygerrit2
+  # - name: Installing python components
+  #   pip:
+  #     name: '{{item}}'
+  #     state: forcereinstall
+  #   with_items:
+  #     - pygerrit2
 
   - name:  Create svcgerrit group
     group:
