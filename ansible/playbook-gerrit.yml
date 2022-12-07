@@ -1,5 +1,5 @@
 ---
-- hosts: groupB
+- hosts: groupA
   become: true
   tasks:
 
@@ -9,11 +9,11 @@
       state: present
     with_items:
       - git
-      - python-pycurl
-      - python-psycopg2
+      # - python-pycurl
+      # - python-psycopg2
       - openjdk-8-jdk
       - systemd
-      - python-pip
+      # - python-pip
       - curl
       - jq
 
