@@ -1,4 +1,10 @@
-- name: Create easy file
-  template:
-    src: "file.txt.j2"
-    dest: "/tmp/file.txt"
+---
+- hosts: all
+  tasks:
+    - name: Print message
+      debug:
+        msg: Hello Ansible World
+    - name: Create easy file
+      template:
+        src: "file.txt.j2"
+        dest: "/tmp/file.txt"
