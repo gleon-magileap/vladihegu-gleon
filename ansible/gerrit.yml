@@ -1,0 +1,50 @@
+---
+- hosts: gerrit
+  become: true
+  tasks:
+
+  - name: Installing required components
+    apt: 
+      name: '{{item}}'
+      state: present
+    with_items:
+      - git
+      - python-pycurl
+      - python-psycopg2
+      - openjdk-8-jdk
+      - systemd
+      - python-pip
+      - curl
+      - jq
+
+  - name: Installing python components
+    pip:
+      name: '{{item}}'
+      state: forcereinstall
+    with_items:
+      - pygerrit2
+
+  - name:  Create svcgerrit group
+    group:
+      gid: 1002
+      name: svcgerrit
+      state: present
+    
+  - name:  Create svcgerrit user
+    user:
+      name: svcgerrit  
+      state: present
+      groups: svcgerrit
+
+  - name: Prepare gerrit directory
+    file: 
+      name: '{{item}}'
+      state: directory
+      owner: svcgerrit
+      recurse: yes
+    with_items:
+      - '/opt/svcgerrit/'
+      - '/opt/svcgerrit/magicleap'
+      - '/opt/svcgerrit/magicleap/etc'
+      - '/opt/svcgerrit/magicleap/lib'
+      - '/opt/svcgerrit/magicleap/plugins'

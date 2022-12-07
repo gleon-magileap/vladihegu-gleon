@@ -1,0 +1,4 @@
+- name: Create easy file
+  template:
+    src: "file.txt.j2"
+    dest: "/tmp/file.txt"
