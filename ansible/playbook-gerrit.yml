@@ -26,7 +26,7 @@
 
   - name:  Create svcgerrit group
     group:
-      gid: 1002
+      # gid: 1002
       name: svcgerrit
       state: present
     
